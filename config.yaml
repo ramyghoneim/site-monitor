@@ -1,0 +1,52 @@
+# Site Monitor Configuration
+# Add sites you want to monitor below
+
+settings:
+  # How often to check sites (in seconds)
+  check_interval: 60
+
+  # Where to store snapshots and change history
+  data_dir: "./data"
+
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  log_level: "INFO"
+
+  # Optional: webhook URL for notifications (Discord, Slack, etc.)
+  # webhook_url: "https://discord.com/api/webhooks/..."
+
+  # Optional: Email notifications
+  # email:
+  #   smtp_server: "smtp.gmail.com"
+  #   smtp_port: 587
+  #   username: "your-email@gmail.com"
+  #   password: "your-app-password"
+  #   from_addr: "your-email@gmail.com"
+  #   to_addr: "recipient@example.com"
+
+# Sites to monitor
+sites:
+  - name: "Example Site"
+    url: "https://example.com"
+    # Check interval override for this site (optional)
+    # interval: 30
+
+    # What to monitor: "full" (entire page), "text" (text only), "selector" (CSS selector)
+    mode: "text"
+
+    # CSS selector to monitor specific element (only used when mode is "selector")
+    # selector: "#content"
+
+    # Ignore specific elements (CSS selectors)
+    # ignore:
+    #   - ".timestamp"
+    #   - ".random-ad"
+
+    # Custom headers (optional)
+    # headers:
+    #   User-Agent: "Mozilla/5.0..."
+
+  # Add more sites:
+  # - name: "News Site"
+  #   url: "https://news.ycombinator.com"
+  #   mode: "text"
+  #   interval: 120
